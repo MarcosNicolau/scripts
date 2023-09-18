@@ -1,0 +1,20 @@
+#compdef zomboid
+
+_restart_service() {
+  if [ -z $ZOMBOID_SAVES ]; then
+    ZOMBOID_SAVES=/home/$USER/Zomboid/Saves
+  fi
+
+  local -a args=(
+      # (-) makes an option mutually exclusive with all other options. 
+      '1:save:->saves'
+  )
+
+  _arguments $args
+
+  case $state in
+    saves)
+       _path_files -W $ZOMBOID_SAVES -g '*' -S /
+      ;;
+  esac
+}

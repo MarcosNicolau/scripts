@@ -59,11 +59,11 @@ void show_help()
 string generate_file_name(string file)
 {
     int index = 1;
-    for (const auto &entry : fs::directory_iterator(get_default_saves_path()))
+    for (const auto &entry : fs::directory_iterator(build_path(get_default_saves_path(), get_file_directory(file))))
     {
         string name = base_name(entry.path());
         string file_name = base_name(file);
-        if (name.find(file_name, 0))
+        if (name.find(file_name, 0) == std::string::npos)
             continue;
         if (file_name == name)
             continue;
