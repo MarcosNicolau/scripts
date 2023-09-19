@@ -45,6 +45,9 @@ string build_path(string dir, string file)
 
 void show_help()
 {
+
+    cout << "This script will restart a save your zomboid fie, it has autocompletion (press <TAB>) so you don't have to remember the file names! \n"
+         << endl;
     cout << "Usage: zomboid [OPTIONS] <SAVE_FILE>" << endl
          << endl;
     cout << "OPTIONS:" << endl;
@@ -118,6 +121,9 @@ int main(int argc, char *argv[])
         case 'h':
             show_help();
             exit(0);
+        // whenever there is an error c = 63
+        case 63:
+            exit(1);
         }
     }
     // Verify that a markdown file was provided after the options.

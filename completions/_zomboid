@@ -1,13 +1,15 @@
 #compdef zomboid
 
-_restart_service() {
+_zomboid() {
   if [ -z $ZOMBOID_SAVES ]; then
     ZOMBOID_SAVES=/home/$USER/Zomboid/Saves
   fi
 
   local -a args=(
-      # (-) makes an option mutually exclusive with all other options. 
       '1:save:->saves'
+      '*--as[The name of the new save. If not provided, defaults to: <SAVE_FILE> (<INDEX>)]'
+      '*--overwrite[If you want to overwrite you current save with the current one]'
+      '*-o[If you want to overwrite you current save with the current one]'
   )
 
   _arguments $args
