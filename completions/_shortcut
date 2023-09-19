@@ -1,0 +1,11 @@
+#compdef shortcut
+
+_shortcut() {
+  local -a args=(
+      # (-) makes an option mutually exclusive with all other options. 
+      '1:command:(create action)'
+      '2:filename:_path_files -W /home/$USER/.local/share/applications -g "*.desktop" -S /'
+  )
+
+  _arguments $args
+}
