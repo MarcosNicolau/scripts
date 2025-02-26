@@ -1,6 +1,11 @@
-# Collection of my PC util scripts
+# My pc setup
 
-This repo contains all the util scripts I use on my systems.
+This repo contains my pc setup. This consists of:
+
+- arch: setup with hyprland - `hyprland`, `kitty`, `waybar` and `wofi`
+- dotfiles: all kinds of configs
+- scripts: utils scripts and other progams.
+- completitions: some scripts have compdef for autocompletion
 
 ## Install
 
